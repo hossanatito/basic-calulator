@@ -27,7 +27,7 @@ class Calc {
     if (num === "." && this.result.value.includes(".")) return;
 
     let currentResult = this.result.value;
-    currentResult = currentResult.replace(/,/g, ""); // Remove existing commas
+    currentResult = currentResult.replace(/,/g, "");
     currentResult += num;
     const formattedResult = this.formatNumber(currentResult);
 
@@ -68,7 +68,7 @@ class Calc {
       case "/":
         return num1 / num2;
       default:
-        return null; // Invalid operator
+        return null;
     }
   }
 
@@ -100,7 +100,7 @@ class Calc {
           const num2 = numbers.pop();
           const num1 = numbers.pop();
           const result = this.operate(prevOperator, num1, num2);
-          if (result === null) return null; // Invalid operator
+          if (result === null) return null;
           numbers.push(result);
         }
         operators.push(char);
